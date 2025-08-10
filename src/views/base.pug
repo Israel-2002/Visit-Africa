@@ -1,0 +1,28 @@
+block variables
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+
+        if environment === "development"
+            link(rel="stylesheet", href="/src/styles/main.css")
+
+        else
+            - var styles = manifest["src/styles/main.css"].file;
+            link(rel="stylesheet", href=styles)
+
+    body
+        include ./partials/navigation.pug
+
+        #content(data-template=template)
+            block content
+
+        if environment === "development"
+            script(type="module", src="@vite/client") 
+            script(type="module", src="/src/scripts/main.js") 
+        else
+            - var script = manifest["src/scripts/main.js"].file;
+            script(type="module", src=script) 

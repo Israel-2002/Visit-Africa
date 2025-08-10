@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1.25vw;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+button {
+  all: unset;
+  font: inherit;
+  color: inherit;
+}
+
+@font-face {
+  font-family: "HK Grotesk";
+  src: url("/fonts/hk-grotesk-regular.woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "HK Grotesk";
+  src: url("/fonts/hk-grotesk-medium.woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "HK Grotesk";
+  src: url("/fonts/hk-grotesk-semibold.woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "HK Grotesk";
+  src: url("/fonts/hk-grotesk-bold.woff2");
+  font-weight: 700;
+}
+body {
+  font-family: "HK Grotesk", sans-serif;
+}
+
+.nav {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+}
+
+.nav__links-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav__links-container--left {
+  gap: 16.875rem;
+}
+
+.nav__links-container--left .nav__links {
+  display: flex;
+  gap: 10rem;
+}
+
+.nav__links-container--right .nav__links {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.nav__links-container--right .nav__links button {
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=main.css.map */
