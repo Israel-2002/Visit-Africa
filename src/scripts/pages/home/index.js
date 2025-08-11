@@ -63,6 +63,13 @@ export default class Home extends Page {
                     ease: "power4.out",
                 },
                 "<",
-            );
+            )
+            .to(".home__title-span--2", {
+                yPercent: -150,
+                delay: 1,
+            })
+            .to(".home__title-span--3", {
+                y: 0,
+            }, "<")
     }
 }
