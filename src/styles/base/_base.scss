@@ -2,6 +2,7 @@
 
 body {
     padding: 12px;
+    overflow-x: hidden;
 
     @include media(">=1280px") {
         padding: 0.75rem;
