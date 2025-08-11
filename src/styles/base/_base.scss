@@ -1,0 +1,9 @@
+@use "../base/responsive" as *;
+
+body {
+    padding: 12px;
+
+    @include media(">=1280px") {
+        padding: 0.75rem;
+    }
+}
