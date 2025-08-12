@@ -1,5 +1,8 @@
 import gsap from "gsap";
 import Page from "../page";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default class Home extends Page {
     constructor() {
@@ -12,6 +15,7 @@ export default class Home extends Page {
         const tl = gsap.timeline({
             defaults: {
                 duration: 0.8,
+                ease: "power2.out",
             },
         });
 
@@ -31,7 +35,7 @@ export default class Home extends Page {
                 "<",
             )
             .to(".home__title-slide", {
-                x: "30.5rem",
+                x: "30rem",
                 delay: 1,
                 ease: "power4.out",
             })
@@ -45,9 +49,9 @@ export default class Home extends Page {
             )
             .to(".home__title-images img", {
                 opacity: 1,
-                stagger: 0.3,
+                stagger: 0.25,
                 duration: 0.1,
-                delay: 1.2,
+                delay: 1,
                 ease: "none",
             })
             .to(".home__title-slide", {
@@ -68,8 +72,42 @@ export default class Home extends Page {
                 yPercent: -150,
                 delay: 1,
             })
-            .to(".home__title-span--3", {
-                y: 0,
-            }, "<")
+            .to(
+                ".home__title-span--3",
+                {
+                    y: 0,
+                },
+                "<",
+            );
+
+        // TODO: Activate parallax animation for mobile
+        // gsap.to(".home__img img", {
+        //     y: 250,
+        //     ease: "none",
+        //     scrollTrigger: {
+        //         trigger: ".home__img",
+        //         start: "top center",
+        //         scrub: true,
+        //     },
+        // });
+
+        // gsap.to(".home__video video", {
+        //     y: 350,
+        //     ease: "none",
+        //     scrollTrigger: {
+        //         trigger: ".home__video",
+        //         start: "top center",
+        //         scrub: 1,
+        //     },
+        // });
+
+        ScrollTrigger.create({
+            trigger: ".home__img",
+            pin: true,
+            scrub: 1,
+            animation: gsap.to("body", {
+                backgroundColor: "#c25b64",
+            }),
+        });
     }
 }
