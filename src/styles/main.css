@@ -33,6 +33,7 @@ button {
 
 body {
   padding: 12px;
+  overflow-x: hidden;
 }
 @media (min-width: 1280px) {
   body {
@@ -155,6 +156,10 @@ body {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.home {
+  padding-bottom: 30rem;
+}
+
 .home__title {
   font-size: 20rem;
   font-weight: 700;
@@ -162,6 +167,8 @@ body {
   position: relative;
   height: 20rem;
   overflow-y: hidden;
+  padding-left: 0.3rem;
+  color: #642f31;
 }
 @media (max-width: 767px) {
   .home__title {
@@ -200,6 +207,55 @@ body {
 
 .home__title-slide {
   transform: translate(15rem, 100%);
+}
+
+.home__medias {
+  display: grid;
+  gap: 0.75rem;
+}
+@media (min-width: 768px) {
+  .home__medias {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.home__img,
+.home__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9/11;
+  margin-top: 0.75rem;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .home__img,
+  .home__video {
+    aspect-ratio: auto;
+    height: 58.25rem;
+  }
+}
+
+.home__img img,
+.home__video video {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .home__img img,
+  .home__video video {
+    height: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .home__video {
+    margin-top: 59rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
